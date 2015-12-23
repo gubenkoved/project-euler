@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P99", "P99\P99.csproj", "{2FB8867E-9C9D-443A-A8DE-9DF190DD000C}"
 EndProject
@@ -78,118 +78,9 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Python", "Python\Python.pyp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP", "CPP\CPP.vcxproj", "{2213AC27-C2EC-4A9F-8999-17E78A2311FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{753D53DB-BB67-47FD-B619-C533C0668116}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 36
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://eugene-gubenkov.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = P99\\P99.csproj
-		SccProjectName1 = P99
-		SccLocalPath1 = P99
-		SccProjectUniqueName2 = P92\\P92.csproj
-		SccProjectName2 = P92
-		SccLocalPath2 = P92
-		SccProjectUniqueName3 = P53\\P53.csproj
-		SccProjectName3 = P53
-		SccLocalPath3 = P53
-		SccProjectUniqueName4 = Common\\Common.csproj
-		SccProjectName4 = Common
-		SccLocalPath4 = Common
-		SccProjectUniqueName5 = P54\\P54.csproj
-		SccProjectName5 = P54
-		SccLocalPath5 = P54
-		SccProjectUniqueName6 = P55\\P55.csproj
-		SccProjectName6 = P55
-		SccLocalPath6 = P55
-		SccProjectUniqueName7 = P56\\P56.csproj
-		SccProjectName7 = P56
-		SccLocalPath7 = P56
-		SccProjectUniqueName8 = P57\\P57.csproj
-		SccProjectName8 = P57
-		SccLocalPath8 = P57
-		SccProjectUniqueName9 = P58\\P58.csproj
-		SccProjectName9 = P58
-		SccLocalPath9 = P58
-		SccProjectUniqueName10 = Memorytest\\Memorytest.csproj
-		SccProjectName10 = Memorytest
-		SccLocalPath10 = Memorytest
-		SccProjectUniqueName11 = P60\\P60.csproj
-		SccProjectName11 = P60
-		SccLocalPath11 = P60
-		SccProjectUniqueName12 = Common.Tests\\Common.Tests.csproj
-		SccProjectName12 = Common.Tests
-		SccLocalPath12 = Common.Tests
-		SccProjectUniqueName13 = P61\\P61.csproj
-		SccProjectName13 = P61
-		SccLocalPath13 = P61
-		SccProjectUniqueName14 = P63\\P63.csproj
-		SccProjectName14 = P63
-		SccLocalPath14 = P63
-		SccProjectUniqueName15 = P64\\P64.csproj
-		SccProjectName15 = P64
-		SccLocalPath15 = P64
-		SccProjectUniqueName16 = P65\\P65.csproj
-		SccProjectName16 = P65
-		SccLocalPath16 = P65
-		SccProjectUniqueName17 = P23\\P23.csproj
-		SccProjectName17 = P23
-		SccLocalPath17 = P23
-		SccProjectUniqueName18 = P26\\P26.csproj
-		SccProjectName18 = P26
-		SccLocalPath18 = P26
-		SccProjectUniqueName19 = P27\\P27.csproj
-		SccProjectName19 = P27
-		SccLocalPath19 = P27
-		SccProjectUniqueName20 = P32\\P32.csproj
-		SccProjectName20 = P32
-		SccLocalPath20 = P32
-		SccProjectUniqueName21 = P33\\P33.csproj
-		SccProjectName21 = P33
-		SccLocalPath21 = P33
-		SccProjectUniqueName22 = P35\\P35.csproj
-		SccProjectName22 = P35
-		SccLocalPath22 = P35
-		SccProjectUniqueName23 = P38\\P38.csproj
-		SccProjectName23 = P38
-		SccLocalPath23 = P38
-		SccProjectUniqueName24 = P39\\P39.csproj
-		SccProjectName24 = P39
-		SccLocalPath24 = P39
-		SccProjectUniqueName25 = P41\\P41.csproj
-		SccProjectName25 = P41
-		SccLocalPath25 = P41
-		SccProjectUniqueName26 = P42\\P42.csproj
-		SccProjectName26 = P42
-		SccLocalPath26 = P42
-		SccProjectUniqueName27 = P43\\P43.csproj
-		SccProjectName27 = P43
-		SccLocalPath27 = P43
-		SccProjectUniqueName28 = P44\\P44.csproj
-		SccProjectName28 = P44
-		SccLocalPath28 = P44
-		SccProjectUniqueName29 = P46\\P46.csproj
-		SccProjectName29 = P46
-		SccLocalPath29 = P46
-		SccProjectUniqueName30 = P47\\P47.csproj
-		SccProjectName30 = P47
-		SccLocalPath30 = P47
-		SccProjectUniqueName31 = P49\\P49.csproj
-		SccProjectName31 = P49
-		SccLocalPath31 = P49
-		SccProjectUniqueName32 = P50\\P50.csproj
-		SccProjectName32 = P50
-		SccLocalPath32 = P50
-		SccProjectUniqueName33 = P19\\P19.csproj
-		SccProjectName33 = P19
-		SccLocalPath33 = P19
-		SccProjectUniqueName34 = Python\\Python.pyproj
-		SccProjectName34 = Python
-		SccLocalPath34 = Python
-		SccProjectUniqueName35 = CPP\\CPP.vcxproj
-		SccProjectName35 = CPP
-		SccLocalPath35 = CPP
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -479,9 +370,20 @@ Global
 		{2213AC27-C2EC-4A9F-8999-17E78A2311FC}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{2213AC27-C2EC-4A9F-8999-17E78A2311FC}.Release|Win32.ActiveCfg = Release|Win32
 		{2213AC27-C2EC-4A9F-8999-17E78A2311FC}.Release|Win32.Build.0 = Release|Win32
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Debug|Win32.Build.0 = Debug|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Release|Win32.ActiveCfg = Release|Any CPU
+		{753D53DB-BB67-47FD-B619-C533C0668116}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
-

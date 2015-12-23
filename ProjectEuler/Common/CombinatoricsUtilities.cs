@@ -44,7 +44,7 @@ namespace Common
 
             // init taken dic
             for (int i = 0; i < elements.Count(); i++)
-			{
+            {
                 taken[i] = false;
             }
 
