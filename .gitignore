@@ -189,3 +189,4 @@ _Pvt_Extensions/
 ModelManifest.xml
 .ptvs
 __pycache__
+/ProjectEuler/Python/.idea/workspace.xml
