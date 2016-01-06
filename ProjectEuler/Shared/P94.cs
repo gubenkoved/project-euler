@@ -17,9 +17,10 @@ namespace Shared
             BigInteger r = 0;
             int maxSide = (int)Math.Ceiling((MAX_PERIMETER / 3.0) + 1);
             
-            for (int a = 2; a < maxSide; a++)
+            // skip where perimeter is odd
+            for (int a = 3; a < maxSide; a += 2)
             {
-                if (a % 100000 == 0)
+                if (a % 100000 == 1)
                 {
                     (a / (float)maxSide).Dump();
                 }
@@ -52,15 +53,31 @@ namespace Shared
 
         public static bool IsAlmostEquilateral(int a, int b, int c)
         {
-            BigInteger p = a + b + c;
+            /*if ((a + b + c) % 2 != 0)
+            {
+                return false;
+            }*/
 
-            BigInteger underSq = p * (p - 2 * a) * (p - 2 * b) * (p - 2 * c);
+            BigInteger cSq = BigInteger.Pow(c, 2);
+
+            BigInteger rem;
+
+            BigInteger cSqDiv = BigInteger.DivRem(cSq, 4, out rem);
+
+            if (rem != 0)
+            {
+                return false;
+            }
+
+            BigInteger underSq = BigInteger.Pow(a, 2) - cSqDiv;
+
+            //BigInteger p = (a + b + c) >> 1;
+
+            //BigInteger underSq = p * (p - a) * (p - b) * (p - c);
 
             BigInteger? root = IsPerfectSquare(underSq);
 
-            return root != null
-                && BigInteger.Remainder(root.Value, 4) == 0;
-
+            return root != null;
         }
 
         public static BigInteger? IsPerfectSquare(BigInteger x)
