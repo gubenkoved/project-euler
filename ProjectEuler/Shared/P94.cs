@@ -19,7 +19,7 @@ namespace Shared
             
             for (int a = 2; a < maxSide; a++)
             {
-                if (a % 1000000 == 0)
+                if (a % 100000 == 0)
                 {
                     (a / (float)maxSide).Dump();
                 }
@@ -32,14 +32,14 @@ namespace Shared
                 int p1 = a + b + c1;
                 int p2 = a + b + c2;
 
-                if (IsAlmostAquilateral(a, b, c1) && p1 < MAX_PERIMETER)
+                if (IsAlmostEquilateral(a, b, c1) && p1 < MAX_PERIMETER)
                 {
                     r += (a + b + c1);
 
                     $"{a}, {b}, {c1}".Dump();
                 }
 
-                if (IsAlmostAquilateral(a, b, c2) && p2 < MAX_PERIMETER)
+                if (IsAlmostEquilateral(a, b, c2) && p2 < MAX_PERIMETER)
                 {
                     r += (a + b + c2);
 
@@ -50,21 +50,56 @@ namespace Shared
             r.Dump("answer");
         }
 
-        public static bool IsAlmostAquilateral(int a, int b, int c)
+        public static bool IsAlmostEquilateral(int a, int b, int c)
         {
             BigInteger p = a + b + c;
 
             BigInteger underSq = p * (p - 2 * a) * (p - 2 * b) * (p - 2 * c);
 
-            // check that underSq is 4 * k ** 2, where k is integer
+            BigInteger? root = IsPerfectSquare(underSq);
 
-            return BigInteger.Remainder(underSq, 4) == 0
-                && IsPerfectSquare(underSq / 4);
+            return root != null
+                && BigInteger.Remainder(root.Value, 4) == 0;
+
         }
 
-        public static bool IsPerfectSquare(BigInteger x)
+        public static BigInteger? IsPerfectSquare(BigInteger x)
         {
-            throw new NotImplementedException("I don't know how to do that yet...");
+            BigInteger l = 1;
+            BigInteger h = x;
+
+            while (true)
+            {
+                BigInteger c = (l + h) >> 1;
+                BigInteger p = BigInteger.Pow(c, 2);
+
+                if (p == x)
+                {
+                    return c;
+                }
+
+                if (l == h)
+                {
+                    break;
+                }
+
+                if (p > x)
+                {
+                    h = c;
+                } else
+                {
+                    if (l == c)
+                    {
+                        l = c + 1;
+                    }
+                    else
+                    {
+                        l = c;
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }
