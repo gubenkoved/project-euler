@@ -10,34 +10,36 @@ namespace Shared
 {
     public class P94
     {
-        public const int MAX_PERIMETER = 1000 * 1000 * 1000; //1000 * 1000 * 1000;
+        public const long MAX_PERIMETER = 1000 * 1000 * 1000; //1000 * 1000 * 1000;
 
         public static void Run()
         {
-            BigInteger r = 0;
-            int maxSide = (int)Math.Ceiling((MAX_PERIMETER / 3.0) + 1);
+            long r = 0;
+            long maxSide = (long)Math.Ceiling((MAX_PERIMETER / 3.0) + 1);
             
             // skip where perimeter is odd
-            for (int a = 3; a < maxSide; a += 2)
+            for (long a = 3; a < maxSide; a += 2)
             {
                 if (a % 100000 == 1)
                 {
                     (a / (float)maxSide).Dump();
                 }
 
-                int b = a;
+                long b = a;
 
-                int c1 = a - 1;
-                int c2 = a + 1;
+                long c1 = a - 1;
+                long c2 = a + 1;
 
-                int p1 = a + b + c1;
-                int p2 = a + b + c2;
+                long p1 = a + b + c1;
+                long p2 = a + b + c2;
 
                 if (IsAlmostEquilateral(a, b, c1) && p1 < MAX_PERIMETER)
                 {
                     r += (a + b + c1);
 
                     $"{a}, {b}, {c1}".Dump();
+
+                    a *= 3;
                 }
 
                 if (IsAlmostEquilateral(a, b, c2) && p2 < MAX_PERIMETER)
@@ -45,50 +47,92 @@ namespace Shared
                     r += (a + b + c2);
 
                     $"{a}, {b}, {c2}".Dump();
+
+                    a *= 3;
                 }
             }
 
             r.Dump("answer");
         }
 
-        public static bool IsAlmostEquilateral(int a, int b, int c)
+        public static bool IsAlmostEquilateral(long a, long b, long c)
         {
             /*if ((a + b + c) % 2 != 0)
             {
                 return false;
             }*/
 
-            BigInteger cSq = BigInteger.Pow(c, 2);
+            long cSq = c*c;
 
-            BigInteger rem;
+            long rem;
 
-            BigInteger cSqDiv = BigInteger.DivRem(cSq, 4, out rem);
+            long cSqDiv = Math.DivRem(cSq, 4, out rem);
 
             if (rem != 0)
             {
                 return false;
             }
 
-            BigInteger underSq = BigInteger.Pow(a, 2) - cSqDiv;
+            long underSq = a * a - cSqDiv;
 
-            //BigInteger p = (a + b + c) >> 1;
+            //long p = (a + b + c) >> 1;
 
-            //BigInteger underSq = p * (p - a) * (p - b) * (p - c);
+            //long underSq = p * (p - a) * (p - b) * (p - c);
 
-            BigInteger? root = IsPerfectSquare(underSq);
+            long? root = IsPerfectSquare3(underSq);
 
             return root != null;
         }
 
-        public static BigInteger? IsPerfectSquare(BigInteger x)
+        public static long? IsPerfectSquare3(long n)
         {
-            BigInteger l = 1;
-            BigInteger h = x;
+            long a = (long)Math.Sqrt(n);
+            if(a * a == n)
+            {
+                return a;
+            }
+
+            return null;
+        }
+
+        public static long? IsPerfectSquare2(long a)
+        {
+            // using newton method
+
+            long xPrev = a;
+            long xCur;
 
             while (true)
             {
-                BigInteger c = (l + h) >> 1;
-                BigInteger p = BigInteger.Pow(c, 2);
+                 xCur = (xPrev + a / xPrev) / 2;
+
+                if (xCur == xPrev || Math.Abs(xCur - xPrev) <= 1)
+                {
+                    break;
+                }
+
+                xPrev = xCur;
+            }
+
+            if (xCur * xCur == a)
+            {
+                return xCur;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static long? IsPerfectSquare(long x)
+        {
+            long l = 1;
+            long h = x;
+
+            while (true)
+            {
+                long c = (l + h) >> 1;
+                long p = c * c;
 
                 if (p == x)
                 {
