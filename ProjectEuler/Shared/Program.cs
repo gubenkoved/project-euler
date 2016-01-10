@@ -10,7 +10,7 @@ namespace Shared
     {
         static void Main(string[] args)
         {
-            P94.Run();
+            P98.Run();
         }
     }
 }

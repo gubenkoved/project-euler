@@ -51,6 +51,7 @@
     <Compile Include="P93.cs" />
     <Compile Include="P94.cs" />
     <Compile Include="P95.cs" />
+    <Compile Include="P98.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +64,12 @@
       <Project>{afb5545c-5624-4cfd-928e-cd50e654fe4d}</Project>
       <Name>Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="data\p098_words.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
